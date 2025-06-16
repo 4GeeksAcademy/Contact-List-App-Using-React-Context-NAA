@@ -1,14 +1,13 @@
 // Import necessary components and functions from react-router-dom.
 
-import {
-    createBrowserRouter,
-    createRoutesFromElements,
-    Route,
-} from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
+import NewContactTemplate from "./components/NewContactTemplate";
+import ContactNavigate from "./pages/ContactNavigate"; 
+import EditContact from "./pages/EditContact";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -25,6 +24,10 @@ export const router = createBrowserRouter(
         <Route path= "/" element={<Home />} />
         <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
         <Route path="/demo" element={<Demo />} />
+        <Route path="/add-contact" element={<NewContactTemplate />} />
+        <Route path="/edit-contact/:contactId" element={<EditContact />} />
+        <Route path="/add-contact" element={<ContactNavigate />} />
+
       </Route>
     )
 );
